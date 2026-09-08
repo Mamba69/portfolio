@@ -1,0 +1,173 @@
+.contact-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 0 12rem;
+  position: relative;
+  z-index: 10;
+  background-color: var(--bg);
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 64px;
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.8s ease, border-color 0.8s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 0 120px 40px rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-heading,
+.contact-desc,
+.contact-actions {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(64, 131, 242, 0.08); /* More transparent blue tint */
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), height 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(100px); /* Extra blurry diffused ink effect */
+}
+
+.contact-card:hover::before {
+  width: 2500px;
+  height: 2500px;
+  opacity: 1;
+}
+
+:root.light-mode .contact-card {
+  background: #f8f8f8;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.05);
+}
+
+:root.light-mode .contact-card:hover {
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.05), inset 0 0 120px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.contact-heading {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 2rem;
+  max-width: 1000px;
+}
+
+.contact-desc {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 4rem;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.contact-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 100px;
+  background: var(--text);
+  color: var(--bg);
+  height: 64px;
+  padding: 0 2.5rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.contact-btn-primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+:root.light-mode .contact-btn-primary {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+:root.light-mode .contact-btn-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove old dropdown styles */
+.contact-btn-secondary {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  padding: 1.25rem 2rem;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+
+:root.light-mode .contact-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 5rem 2rem;
+    border-radius: 32px;
+  }
+  .contact-actions {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

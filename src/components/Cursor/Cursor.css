@@ -1,0 +1,36 @@
+﻿.cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9997;
+  overflow: hidden;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #4184F3;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cursor.cursor-hover {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor, .cursor-canvas {
+    display: none;
+  }
+}

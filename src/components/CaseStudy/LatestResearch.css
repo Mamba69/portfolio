@@ -1,0 +1,80 @@
+.experience-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.experience-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.experience-header {
+  margin-bottom: 3rem;
+}
+
+.experience-label {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.experience-label::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.experience-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.experience-heading {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+
+.experience-right {
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+}
+
+.experience-description {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    width: calc(100% - 2rem);
+  }
+
+  .experience-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .experience-right {
+    padding-left: 1.5rem;
+  }
+}

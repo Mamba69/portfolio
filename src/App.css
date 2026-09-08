@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   App Layout Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 80vh;
+  background: radial-gradient(ellipse at 50% 0%, rgba(65, 132, 243, 0.08) 0%, rgba(65, 132, 243, 0.02) 40%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse-glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.text-white {
+  color: var(--text);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+.section-divider {
+  width: 90%;
+  max-width: 1200px;
+  height: 1px;
+  background: var(--border);
+  margin: 2rem auto;
+}

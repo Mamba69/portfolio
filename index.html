@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Variable:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/download.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivam Tiwari</title>
+  </head>
+  <body>
+    <!-- Hidden form for Netlify bots to discover the form schema during build -->
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

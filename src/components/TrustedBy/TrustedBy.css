@@ -1,0 +1,104 @@
+.trusted-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.trusted-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trusted-label {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trusted-label::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.trusted-heading {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 4rem;
+}
+
+.trusted-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.trusted-chip-link {
+  text-decoration: none;
+  display: block;
+}
+
+.trusted-chip {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+:root.light-mode .trusted-chip {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.trusted-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(66, 133, 244, 0.5);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(66, 133, 244, 0.2);
+}
+
+:root.light-mode .trusted-chip:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(66, 133, 244, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .trusted-container {
+    width: calc(100% - 2rem);
+  }
+  
+  .trusted-chip {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}

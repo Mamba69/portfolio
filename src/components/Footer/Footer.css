@@ -1,0 +1,139 @@
+.footer-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0 4rem;
+  background-color: var(--bg);
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--border);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6rem;
+}
+
+.footer-left {
+  max-width: 50%;
+  text-align: left;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.footer-desc {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.footer-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.footer-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  color: var(--text-secondary);
+}
+
+.footer-link:hover .footer-link-icon {
+  transform: translateX(-4px);
+  color: var(--accent);
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+:root.light-mode .footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .footer-left {
+    max-width: 100%;
+  }
+  .footer-right {
+    align-items: flex-start;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

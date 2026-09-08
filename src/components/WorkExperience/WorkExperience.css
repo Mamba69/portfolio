@@ -1,0 +1,218 @@
+.work-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.work-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.work-header {
+  margin-bottom: 4rem;
+}
+
+.work-label {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.work-label::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.work-heading {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(66, 133, 244, 0.4) 10%, rgba(66, 133, 244, 0.4) 90%, transparent);
+}
+
+.job-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  background: transparent;
+  position: relative;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -2.85rem; /* Aligns perfectly with the 2px line at left:0 of .job-list */
+  top: 3.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+}
+
+.job-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transform: scale(1.02);
+}
+
+.job-row:hover .timeline-node {
+  background: var(--accent);
+  box-shadow: 0 0 25px rgba(66, 133, 244, 1);
+  transform: rotate(45deg) scale(1.4);
+}
+
+:root.light-mode .job-row:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.job-date {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-top: 0.5rem;
+}
+
+.job-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.job-title {
+  font-size: 1.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.job-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.2s ease;
+}
+
+.job-company:hover {
+  opacity: 0.8;
+}
+
+.job-company-icon {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.job-company:hover .job-company-icon {
+  transform: translate(2px, -2px);
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.job-row:hover .job-tags {
+  opacity: 1;
+  max-height: 50px;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.job-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.job-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 900px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .work-container {
+    width: calc(100% - 2rem);
+  }
+
+  .job-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .job-date {
+    padding-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}

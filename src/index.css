@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+/* Design Tokens */
+:root {
+  --bg: #020202;
+  --text: #ffffff;
+  --text-secondary: #9ba1a6;
+  --accent: #4285f4;
+  --accent-hover: #5a9bf6;
+  --border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(0, 0, 0, 0.6);
+  --nav-hover: rgba(255, 255, 255, 0.1);
+  --btn-bg: #ffffff;
+  --btn-text: #000000;
+  --capsule-bg: #0C0C0C;
+  
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+:root.light-mode {
+  --bg: #f5f5f7;
+  --text: #1d1d1f;
+  --text-secondary: #86868b;
+  --border: rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-hover: rgba(0, 0, 0, 0.05);
+  --btn-bg: #000000;
+  --btn-text: #ffffff;
+  --capsule-bg: #e5e5ea;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Selection */
+::selection {
+  background: rgba(66, 133, 244, 0.3);
+}
+
+/* Hide native cursor on desktop */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-xl);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

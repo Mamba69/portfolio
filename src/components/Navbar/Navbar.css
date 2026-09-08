@@ -1,0 +1,152 @@
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+  background: var(--nav-bg);
+  backdrop-filter: blur(40px);
+
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  z-index: 9998;
+  width: 90%;
+  max-width: 1200px;
+  transition:
+    background 0.3s ease,
+    border 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.navbar.navbar-hidden {
+  transform: translate(-50%, calc(-100% - 1rem));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-profile-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo {
+  font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.8;
+  transition:
+    opacity 0.2s ease,
+    color 0.3s ease;
+  color: var(--text);
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text);
+}
+
+.theme-toggle:hover {
+  background: var(--nav-hover);
+}
+
+.hire-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1.25rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.hire-btn:hover {
+  transform: scale(1.05);
+}
+
+.hire-btn * {
+  mix-blend-mode: normal;
+  color: var(--btn-text);
+}
+
+.hire-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: calc(100% - 2rem);
+    padding: 0.625rem 1rem;
+    gap: 1rem;
+  }
+
+  .navbar-center {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
