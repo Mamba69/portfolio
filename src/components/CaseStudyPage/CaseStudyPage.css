@@ -1,0 +1,352 @@
+.case-study-page {
+  width: 100%;
+  padding: 8rem 0 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.cs-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cs-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.cs-back-link:hover {
+  color: var(--accent);
+}
+
+.cs-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 3rem;
+  max-width: 900px;
+  text-align: left;
+}
+
+.cs-hero-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.cs-hero-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #111111;
+  border: 1px solid var(--border);
+}
+
+.cs-hero-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.cs-hero-side {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+  height: 100%;
+}
+
+.cs-hero-tagline {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.cs-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cs-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.cs-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 220px;
+}
+
+.cs-divider-bar {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--border) 15%, var(--border) 85%, transparent);
+  margin: 5rem 0;
+}
+
+.cs-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.cs-meta-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 8rem;
+}
+
+.cs-meta-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.cs-meta-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.cs-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.cs-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+.cs-content-row.cs-reverse {
+  direction: rtl;
+}
+
+.cs-content-row.cs-reverse .cs-content-text,
+.cs-content-row.cs-reverse .cs-content-image {
+  direction: ltr;
+}
+
+.cs-content-text.cs-full {
+  grid-column: 1 / -1;
+}
+
+.cs-section-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.cs-section-paragraph {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.cs-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cs-bullet-list li {
+  font-size: 0.9375rem;
+  color: var(--text);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.cs-bullet-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  top: 0.2em;
+}
+
+.cs-content-image {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #111111;
+}
+
+.cs-content-image img {
+  width: 100%;
+  display: block;
+}
+
+.cs-workflow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.cs-workflow-step {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cs-workflow-arrow {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.cs-process-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.cs-mini-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.cs-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cs-image-pair img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.cs-closing-image {
+  width: 90%;
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.cs-closing-image img {
+  width: 100%;
+  display: block;
+}
+
+.cs-nav-row {
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.cs-nav-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.cs-nav-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 992px) {
+  .cs-hero-row {
+    grid-template-columns: 1fr;
+  }
+  .cs-hero-side {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .cs-body {
+    grid-template-columns: 1fr;
+  }
+  .cs-meta-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cs-content-row,
+  .cs-content-row.cs-reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .cs-process-columns,
+  .cs-image-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-container,
+  .cs-closing-image,
+  .cs-nav-row {
+    width: calc(100% - 2rem);
+  }
+  .cs-title {
+    margin-bottom: 2rem;
+  }
+}

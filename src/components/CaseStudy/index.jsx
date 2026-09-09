@@ -94,7 +94,7 @@ function LatestResearch() {
           tags="#B2C #RESEARCH #INTERFACE"
           legacy={false}
           image={shiftyImg}
-          link="https://www.figma.com/design/fBLMpGK4iRSXoWzPCDFneX/Shifty-Case-study?node-id=0-1&t=8xOYCQuNHYXrjsUr-1"
+          link="/work/shifty"
         />
 
         <ProjectCard
@@ -106,7 +106,7 @@ function LatestResearch() {
           tags="#B2B #B2C #RESEARCH"
           legacy={false}
           image={rideonImg}
-          link="https://www.figma.com/design/yHhksChOCH04DKXjfDY5ay/E-Riksha-Dashboard-(Copy)?t=M2id3RALeav6Cd3u-0"
+          link="/work/rideon"
         />
 
         <ProjectCard
