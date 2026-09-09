@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
+/* =========================================================
+   CV VIEWER
+   Viewer styling is based on your original CV CSS.
+   The document itself is rebuilt for the new one-page CV PDF.
+   ========================================================= */
+
 .cv-viewer-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +14,7 @@
   background-color: #131313;
   color: #e5e2e1;
   font-family: 'Geist', sans-serif;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cv-viewer-header {
@@ -16,6 +22,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
+  min-height: 48px;
+  box-sizing: border-box;
   background-color: #1c1b1b;
   border-bottom: 1px solid rgba(142, 145, 146, 0.2);
   z-index: 50;
@@ -31,11 +39,33 @@
   color: #e5e2e1;
 }
 
+.cv-header-title svg {
+  flex-shrink: 0;
+}
+
+.cv-back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e2e1;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.cv-back-button:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
 .cv-toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  min-height: 48px;
+  box-sizing: border-box;
   background-color: #1c1b1b;
   border-bottom: 1px solid rgba(142, 145, 146, 0.1);
   z-index: 10;
@@ -55,6 +85,8 @@
 }
 
 .cv-icon-btn {
+  width: auto;
+  height: auto;
   background: none;
   border: none;
   color: #c4c7c8;
@@ -64,12 +96,45 @@
   justify-content: center;
   border-radius: 4px;
   padding: 6px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .cv-icon-btn:hover {
   background-color: #2a2a2a;
   color: #ffffff;
+}
+
+.cv-page-counter {
+  display: flex;
+  align-items: center;
+}
+
+.cv-page-number {
+  min-width: 25px;
+  text-align: center;
+}
+
+.cv-toolbar-spacer {
+  flex: 1;
+}
+
+.cv-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #5f6368;
+  margin: 0 5px;
+}
+
+.cv-zoom-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cv-zoom-value {
+  min-width: 42px;
+  text-align: center;
+  color: #c4c7c8;
 }
 
 .cv-main-area {
@@ -79,8 +144,13 @@
   position: relative;
 }
 
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
 .cv-sidebar {
-  width: 320px;
+  width: 220px;
+  min-width: 220px;
   background-color: #201f1f;
   border-right: 1px solid rgba(142, 145, 146, 0.1);
   overflow-y: auto;
@@ -89,16 +159,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: width 0.3s ease, padding 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
-}
-
-.cv-sidebar.collapsed {
-  width: 0;
-  padding-left: 0;
-  padding-right: 0;
-  opacity: 0;
-  border-right-color: transparent;
-  pointer-events: none;
+  transition:
+    width 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease,
+    border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .cv-sidebar-title {
@@ -119,6 +185,9 @@
   padding: 16px;
   border-radius: 8px;
   transition: transform 0.2s, background-color 0.2s;
+  border: 0;
+  color: inherit;
+  background: transparent;
 }
 
 .cv-thumbnail-container:hover {
@@ -135,27 +204,21 @@
   height: 247px;
   background-color: #fff;
   border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  box-sizing: content-box;
-}
-
-.cv-thumbnail-content {
-  width: 794px;
-  height: 1123px;
-  transform: scale(0.2204); /* 175 / 794 */
-  transform-origin: top left;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  box-sizing: border-box;
 }
 
 .cv-thumbnail .cv-page-a4 {
   box-shadow: none !important;
   margin: 0 !important;
+}
+
+.cv-thumbnail .cv-page-a4 {
+  transform: scale(0.2204);
+  transform-origin: top left;
 }
 
 .cv-thumbnail-num {
@@ -167,10 +230,15 @@
   gap: 6px;
 }
 
+/* =========================================================
+   CONTENT AREA
+   ========================================================= */
+
 .cv-content-scroll {
   flex: 1;
   background-color: #0e0e0e;
   overflow: auto;
+  min-width: 0;
 }
 
 .cv-zoom-container {
@@ -179,23 +247,9 @@
   align-items: center;
   padding: 40px;
   min-width: min-content;
-  min-height: 100%;
+  min-height: max-content;
   gap: 24px;
-}
-
-/* Scrollbar */
-.cv-content-scroll::-webkit-scrollbar,
-.cv-sidebar::-webkit-scrollbar {
-  width: 8px;
-}
-.cv-content-scroll::-webkit-scrollbar-track,
-.cv-sidebar::-webkit-scrollbar-track {
-  background: #131313;
-}
-.cv-content-scroll::-webkit-scrollbar-thumb,
-.cv-sidebar::-webkit-scrollbar-thumb {
-  background: #353534;
-  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .cv-page-wrapper {
@@ -213,226 +267,245 @@
   transition: transform 0.2s ease-out;
 }
 
-/* A4 Page Styling */
+/* =========================================================
+   A4 CV DOCUMENT
+   ========================================================= */
+
 .cv-page-a4 {
   width: 794px;
   height: 1123px;
-  background: #fff;
-  padding: 76px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  padding: 56px 58px 48px;
   box-sizing: border-box;
-  color: #000;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  color: #111111;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.25;
   position: relative;
   overflow: hidden;
   text-align: left;
 }
 
-.cv-header {
+/* Header */
+
+.cv-document-header {
   text-align: center;
   margin-bottom: 20px;
-  padding-bottom: 0;
-  border-bottom: none;
-  display: block;
 }
-.cv-name {
-  font-size: 34px;
-  font-weight: bold;
-  color: #9013fe;
-  margin-bottom: 6px;
-  letter-spacing: normal;
-  text-transform: uppercase;
-}
-.cv-title-text {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 6px;
-  letter-spacing: normal;
-  text-transform: none;
-  font-weight: normal;
-}
-.cv-contact {
-  text-align: center;
-  font-size: 13px;
-  color: #000;
+
+.cv-document-header h1 {
+  margin: 0 0 7px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 31px;
+  line-height: 1;
   font-weight: 700;
-  display: block;
-}
-.cv-contact a {
-  color: #000;
-  text-decoration: none;
+  letter-spacing: -0.3px;
+  color: #111111;
 }
 
-.cv-summary {
-  font-size: 13px;
-  color: inherit;
-  text-align: justify;
-  margin-bottom: 20px;
-  border-top: 1.5px solid #000;
-  border-bottom: 1.5px solid #000;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.cv-section-title {
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  color: inherit;
-  letter-spacing: normal;
-}
-.cv-job {
-  margin-bottom: 18px;
-  padding-left: 0;
-}
-.cv-job::before {
-  display: none;
-}
-.cv-job-header {
+.cv-contact-row {
   display: flex;
-  justify-content: space-between;
-  font-size: 13.5px;
-  margin-bottom: 2px;
-}
-.cv-job-date {
-  color: #000;
-  font-size: inherit;
-  font-weight: normal;
-}
-.cv-job-location {
-  color: #888;
-}
-.cv-job-company {
-  font-size: 13.5px;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 1px;
-  margin-left: 45px;
-  color: inherit;
-}
-.cv-job-role {
-  font-size: 13.5px;
-  font-weight: bold;
-  font-style: italic;
-  color: #a020f0;
-  margin-bottom: 1px;
-  margin-left: 45px;
-}
-.cv-job-tags {
-  font-size: 13.5px;
-  font-style: italic;
-  margin-bottom: 4px;
-  color: #444;
-  margin-left: 45px;
-}
-.cv-job-desc {
-  margin: 0 0 0 45px;
-  padding-left: 18px;
-  list-style-type: disc;
-}
-.cv-job-desc li {
-  font-size: 13.5px;
-  color: inherit;
-  margin-bottom: 3px;
-  line-height: 1.25;
-}
-.cv-edu-item {
-  margin-bottom: 12px;
-}
-.cv-edu-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-.cv-edu-degree {
-  font-size: 13.5px;
-  font-weight: bold;
-  font-style: italic;
-  margin-left: 45px;
-  color: inherit;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 11.5px;
+  line-height: 1.2;
+  color: #111111;
 }
 
-.cv-skill-group {
-  margin-bottom: 8px;
-  font-size: 13.5px;
-  margin-left: 45px;
-  display: block;
-}
-.cv-skill-label {
-  font-weight: bold;
-  display: block;
-  margin-left: -45px;
-  margin-bottom: 2px;
-}
-.cv-project-item {
-  margin-bottom: 12px;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-}
-.cv-project-name {
-  font-size: 13.5px;
-  font-weight: bold;
-  margin-bottom: 2px;
-  margin-left: 0;
-  color: inherit;
-}
-.cv-project-name a {
-  color: inherit;
-  text-decoration: none;
-}
-.cv-project-name a:hover {
+.cv-contact-row a {
+  color: #111111;
   text-decoration: underline;
-}
-.cv-project-desc {
-  margin: 0 0 0 45px;
-  padding-left: 18px;
-}
-.cv-project-desc li {
-  font-size: 13.5px;
-  margin-bottom: 4px;
-  color: inherit;
-  list-style-type: disc;
-  line-height: 1.4;
-}
-@media print {
-  .cv-viewer-header, .cv-toolbar, .cv-sidebar {
-    display: none !important;
-  }
-  .cv-viewer-container {
-    height: auto;
-    background: white;
-    overflow: visible;
-  }
-  .cv-main-area {
-    overflow: visible;
-    display: block;
-  }
-  .cv-content-scroll {
-    overflow: visible;
-    padding: 0;
-    gap: 0;
-    display: block;
-    background: transparent;
-  }
-  .cv-page-wrapper {
-    transform: none !important;
-  }
-  .cv-page-a4 {
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    page-break-after: always;
-  }
+  text-underline-offset: 1px;
 }
 
-/* Responsive Styles */
+.cv-contact-row a:hover {
+  color: #333333;
+}
+
+/* Sections */
+
+.cv-section {
+  margin: 0 0 13px;
+}
+
+.cv-section h2 {
+  margin: 0 0 8px;
+  padding: 0 0 4px;
+  border-bottom: 1px solid #111111;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* Experience / Education */
+
+.cv-entry {
+  margin-bottom: 10px;
+}
+
+.cv-entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.cv-entry-title {
+  font-size: 13.5px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #111111;
+}
+
+.cv-entry-company {
+  margin-top: 1px;
+  font-size: 12.5px;
+  line-height: 1.15;
+  font-style: italic;
+  color: #111111;
+}
+
+.cv-entry-subtitle {
+  margin-top: 2px;
+  font-size: 12.3px;
+  line-height: 1.2;
+  font-style: italic;
+  color: #111111;
+}
+
+.cv-entry-meta {
+  min-width: 170px;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #111111;
+}
+
+.cv-entry-meta em {
+  display: block;
+  margin-top: 1px;
+  font-style: italic;
+}
+
+.cv-entry ul {
+  margin: 3px 0 0 19px;
+  padding: 0;
+}
+
+.cv-entry li {
+  margin: 0;
+  padding-left: 1px;
+  font-size: 11.7px;
+  line-height: 1.27;
+  color: #111111;
+}
+
+/* Projects */
+
+.cv-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cv-project-row {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #111111;
+}
+
+.cv-project-row strong {
+  font-weight: 700;
+}
+
+.cv-project-row em {
+  font-style: italic;
+}
+
+.cv-project-row time {
+  margin-left: 12px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Skills */
+
+.cv-skills-section {
+  margin-bottom: 0;
+}
+
+.cv-skill-line {
+  margin: 0 0 3px;
+  font-size: 11.9px;
+  line-height: 1.3;
+  color: #111111;
+}
+
+.cv-skill-line strong {
+  font-weight: 700;
+}
+
+/* =========================================================
+   PDF EXPORT
+   ========================================================= */
+
+.cv-pdf-export-host {
+  position: fixed;
+  left: -10000px;
+  top: -10000px;
+  width: 794px;
+  height: 1123px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.cv-pdf-export-host #pdf-export-container {
+  width: 794px;
+  height: 1123px;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.cv-content-scroll::-webkit-scrollbar,
+.cv-sidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cv-content-scroll::-webkit-scrollbar-track,
+.cv-sidebar::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+.cv-content-scroll::-webkit-scrollbar-thumb,
+.cv-sidebar::-webkit-scrollbar-thumb {
+  background: #353534;
+  border-radius: 10px;
+}
+
+.cv-content-scroll::-webkit-scrollbar-thumb:hover,
+.cv-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #4a4a49;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 .cv-sidebar-toggle-container {
   position: absolute;
   left: 24px;
@@ -450,22 +523,40 @@
     position: absolute;
     height: 100%;
     z-index: 40;
-    box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
   }
 }
 
 @media (max-width: 768px) {
   .cv-viewer-header {
-    padding: 12px 16px;
+    padding: 10px 16px;
   }
+
   .cv-sidebar-toggle-container {
     left: 12px;
   }
+
   .cv-hide-mobile {
     display: none !important;
   }
-  .cv-content-scroll {
+
+  .cv-toolbar {
+    gap: 8px;
+    padding: 8px 6px;
+  }
+
+  .cv-toolbar-group {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+
+  .cv-zoom-container {
     padding: 20px 10px;
+  }
+
+  .cv-sidebar {
+    width: 220px;
+    min-width: 220px;
   }
 }
 
@@ -473,12 +564,74 @@
   .cv-hide-small {
     display: none !important;
   }
+
   .cv-toolbar {
-    gap: 8px;
-    padding: 10px 4px;
+    gap: 5px;
+    padding: 8px 4px;
   }
+
   .cv-toolbar-group {
-    gap: 6px;
-    padding: 6px 10px;
+    gap: 4px;
+    padding: 5px 7px;
+  }
+
+  .cv-header-title {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .cv-zoom-value {
+    min-width: 35px;
+  }
+
+  .cv-zoom-container {
+    padding: 10px;
+  }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .cv-pdf-export-host,
+  .cv-pdf-export-host * {
+    visibility: visible !important;
+  }
+
+  .cv-pdf-export-host {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 794px !important;
+    height: 1123px !important;
+    opacity: 1 !important;
+  }
+
+  .cv-viewer-container {
+    display: none !important;
+  }
+
+  .cv-page-a4 {
+    box-shadow: none !important;
+    margin: 0 !important;
   }
 }
