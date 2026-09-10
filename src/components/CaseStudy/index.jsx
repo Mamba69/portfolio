@@ -82,7 +82,7 @@ function LatestResearch() {
           tags="#B2C #INTERFACE #RESEARCH"
           legacy={false}
           image={hclImg}
-          link="https://www.figma.com/design/47olg6oyb8obQWJZwwOi10/HCL?node-id=0-1&t=oWxfkBaMkZubdjKY-1"
+          link="work/hcl"
         />
 
         <ProjectCard

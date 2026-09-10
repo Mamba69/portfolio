@@ -20,6 +20,8 @@ import ShivamCV from "./components/CV/ShivamCV";
 import "./App.css";
 import ShiftyCaseStudy from "./pages/ShiftyCaseStudy";
 import RideOnCaseStudy from "./pages/RideOnCaseStudy";
+import HclCaseStudy from "./pages/HclCaseStudy";
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -107,6 +109,7 @@ function App() {
         <Route path="/cv" element={<ShivamCV />} />
         <Route path="/work/shifty" element={<ShiftyCaseStudy />} />
         <Route path="/work/ride-on" element={<RideOnCaseStudy />} />
+        <Route path="/work/hcl" element={<HclCaseStudy />} />
       </Routes>
     </>
   );
