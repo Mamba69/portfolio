@@ -82,7 +82,7 @@ function LatestResearch() {
           tags="#B2C #INTERFACE #RESEARCH"
           legacy={false}
           image={hclImg}
-          link="work/hcl"
+          link="/work/hcl"
         />
 
         <ProjectCard
