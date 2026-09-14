@@ -185,7 +185,7 @@ const CVPage = ({ id }) => (
 
       <div className="cv-project-list">
         <div className="cv-project-row">
-          <strong>UDISE+</strong>
+          <strong>Students Analytics</strong>
           <span>|</span>
           <em>Figma, React, Framer, Behance, Claude</em>
           <time>December 2025</time>

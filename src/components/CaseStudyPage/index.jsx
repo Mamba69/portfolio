@@ -4,8 +4,10 @@ import Magnetic from "../Magnetic";
 import "./CaseStudyPage.css";
 
 // Generic, data-driven case study "inside page" template.
-// Every project page (Shifty, HCL, UDISE+ replacement, Ride On, Rapido)
-// renders through this same component — only the `data` object changes.
+// Every project page (Shifty, HCL, Student Analytics Dashboard, Ride On,
+// Rapido) renders through this same component — only the `data` object
+// changes. Pass `data.figmaLink` to show a "View on Figma" CTA next to the
+// back link — omit it (as with live-deployed / NDA projects) to hide it.
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -50,7 +52,6 @@ export default function CaseStudyPage({ data, prevProject, nextProject }) {
     title,
     tagline,
     heroImage,
-    intro,
     stats,
     meta, // { company, role, platform, duration, type }
     challenge,
@@ -59,19 +60,42 @@ export default function CaseStudyPage({ data, prevProject, nextProject }) {
     challenges, // design/process challenges section
     result,
     closingImage,
+    figmaLink, // optional — only shown when provided
   } = data;
 
   return (
     <section className="case-study-page">
       <div className="cs-container">
-        <Magnetic>
-          <Link to="/#work" className="cs-back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Back to Portfolio
-          </Link>
-        </Magnetic>
+        <div className="cs-top-row">
+          <Magnetic>
+            <Link to="/#work" className="cs-back-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Back to case studies
+            </Link>
+          </Magnetic>
+
+          {figmaLink && (
+            <Magnetic>
+              <a
+                href={figmaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cs-figma-link"
+              >
+                <svg width="16" height="16" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE" />
+                  <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83" />
+                  <path d="M19 0v19H9.5a9.5 9.5 0 0 1 0-19H19z" fill="#FF7262" />
+                  <path d="M38 9.5a9.5 9.5 0 0 1-9.5 9.5H19V0h9.5A9.5 9.5 0 0 1 38 9.5z" fill="#F24E1E" />
+                  <path d="M38 28.5a9.5 9.5 0 0 1-9.5 9.5H19V19h9.5a9.5 9.5 0 0 1 9.5 9.5z" fill="#A259FF" />
+                </svg>
+                View on Figma
+              </a>
+            </Magnetic>
+          )}
+        </div>
 
         <motion.h1
           className="cs-title"

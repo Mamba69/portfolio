@@ -13,6 +13,9 @@ const hclData = {
     "HCL's procurement platform replaces the traditional RFP and vendor-selection process with an AI-guided workflow — understand your requirement, get matched to suitable vendors, and contact them directly, instead of running a manual search that drags on for months.",
   heroImage: hclHero,
 
+  figmaLink:
+    "https://www.figma.com/design/47olg6oyb8obQWJZwwOi10/HCL?node-id=0-1&t=oWxfkBaMkZubdjKY-1",
+
   stats: [
     { value: "5", label: "Guided steps from requirement to vendor shortlist" },
     { value: "2", label: "Ways to define a requirement — AI-assisted or manual" },

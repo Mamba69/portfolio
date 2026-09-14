@@ -12,6 +12,9 @@ const shiftyData = {
     "Shifty is a mobile app that helps college students in non-domicile states find available rooms, PGs, and compatible roommates — cutting out brokers and building trust through transparency.",
   heroImage: shiftyHero,
 
+  figmaLink:
+    "https://www.figma.com/design/fBLMpGK4iRSXoWzPCDFneX/Shifty-Case-study?node-id=0-1&t=8xOYCQuNHYXrjsUr-1",
+
   // NOTE: these are process/output stats drawn from the case study itself
   // (research + IA), not live product KPIs — Shifty doesn't have deployed
   // metrics since it's a personal case study. Swap these for real numbers

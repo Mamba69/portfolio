@@ -11,6 +11,13 @@
   margin: 0 auto;
 }
 
+.cs-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
 .cs-back-link {
   display: inline-flex;
   align-items: center;
@@ -19,12 +26,40 @@
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 2rem;
   transition: color 0.3s ease;
 }
 
 .cs-back-link:hover {
   color: var(--accent);
+}
+
+.cs-figma-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cs-figma-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+:root.light-mode .cs-figma-link {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+:root.light-mode .cs-figma-link:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .cs-title {

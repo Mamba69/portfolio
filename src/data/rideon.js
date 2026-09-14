@@ -12,6 +12,9 @@ const rideonData = {
     "Ride On is a mobile app that helps E-rickshaw drivers earn more money and get loans without a credit score — enhanced around the real needs and habits of drivers themselves.",
   heroImage: rideonHero,
 
+  figmaLink:
+    "https://www.figma.com/design/yHhksChOCH04DKXjfDY5ay/E-Riksha-Dashboard-(Copy)?t=M2id3RALeav6Cd3u-0",
+
   // Process/output stats from the case study itself — Ride On is a personal
   // case study without a live deployment, so these reflect research depth
   // and design scope rather than business KPIs.

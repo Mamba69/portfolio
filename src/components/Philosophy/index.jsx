@@ -67,16 +67,16 @@ function Philosophy() {
 
             <div className="philosophy-stats">
               <div className="stat-item">
-                <div className="stat-value">4+2</div>
+                <div className="stat-value">4</div>
                 <div className="stat-label">YEARS OF CRAFT</div>
               </div>
               <div className="stat-item">
-                <div className="stat-value">8+</div>
-                <div className="stat-label">PRODUCT SHIPS</div>
+                <div className="stat-value">11</div>
+                <div className="stat-label">PRODUCT SHIPS </div>
               </div>
               <div className="stat-item">
                 <div className="stat-value">1</div>
-                <div className="stat-label">GOVERNMENT PRODUCT</div>
+                <div className="stat-label">GOVERNMENT PRODUCT (NDA)</div>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ function Philosophy() {
                     </a>
                     <span className="phil-inner-divider">/</span>
                     <a
-                      href="https://www.linkedin.com/in/shivam-tiwari-b81820226/"
+                      href="https://www.linkedin.com/in/shivam-tiwari20/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="phil-inner-link"

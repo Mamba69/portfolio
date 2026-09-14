@@ -62,17 +62,16 @@ function LatestResearch() {
         </div>
 
         <ProjectCard
-          number="01"
-          category="UDISE+"
-          year="2026"
-          title="UDISE+"
-          description="A unified analytics platform built on UDISE+data - covering 25 crore students, 1 crore teachers, and 14.7 lakh schools across every state and union territory."
-          tags="#GOVERNMENT #DEVELOPING #DESIGNING"
-          legacy={false}
-          image={udiseImg}
-          link="https://insights.udiseplus.gov.in/"
+         number="01"
+         category="STUDENT ANALYTICS"
+         year="2026"
+         title="Student Analytics Dashboard"
+         description="A unified analytics platform covering 25 crore students, 1 crore teachers, and 14.7 lakh schools across every state and union territory."
+         tags="#GOVERNMENT #DEVELOPING #DESIGNING"
+         legacy={false}
+         image={udiseImg}
+         link="/work/student-analytics"
         />
-
         <ProjectCard
           number="02"
           category="HCL"

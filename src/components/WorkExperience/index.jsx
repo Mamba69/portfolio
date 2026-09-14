@@ -33,7 +33,7 @@ function WorkExperience() {
       link: "https://growthgear.in/",
       tags: ["MICRO SAAS", "AI", "GOVERNMENT"],
       description:
-        "Owning end-to-end design across multiple products — from micro SaaS tools to government projects. Collaborating daily with developers through detailed design handoff and development briefs. Built Caudate AI, a proprietary software product, entirely from scratch.",
+        "Owned end-to-end product design across multiple products, from micro-SaaS tools to government platforms. Worked closely with founders and developers to translate complex workflows into scalable experiences, from early concepts and interaction design to detailed handoffs and development. Built Caudate AI from the ground up, shaping its product experience, design system, and core workflows.",
     },
     {
       date: "Sep 2024 - Jan 2025",
@@ -42,7 +42,7 @@ function WorkExperience() {
       link: "https://www.m5clogs.com/",
       tags: ["SAAS", "REDESIGN", "B2B"],
       description:
-        "Redesigned the website while preserving existing flow, developed components, and created both low and high-fidelity designs from comprehensive ground research.",
+        "Reworked the website experience without disrupting established user flows, balancing business requirements with usability. Defined the interface structure, built reusable components, and took the product from early wireframes through high-fidelity design.",
     },
     {
       date: "Aug 2024 - Oct 2024",
@@ -51,7 +51,7 @@ function WorkExperience() {
       link: "https://makersharks.ai/",
       tags: ["AI", "SAAS", "B2B", "B2C"],
       description:
-        "Designed wireframes and high-fidelity prototypes for FLO and the dashboard. Optimized SOPs and revamped the entire product process alongside PMs and developers.",
+        "Designed the end-to-end experience for FLO, from wireframes and interaction flows to high-fidelity prototypes and dashboard experiences. Refined the SCP product workflow and worked closely with PMs and developers to simplify complex processes and improve the overall product experience.",
     },
     {
       date: "Feb 2024 - Oct 2024",
@@ -60,7 +60,7 @@ function WorkExperience() {
       link: "https://www.dacoid.com/",
       tags: ["AI", "AUTOMATION", "B2B"],
       description:
-        "Collaborated with multiple companies on UX/UI. Redesigned multiple sites and improved flows. Led SETC questionnaire redesign using user insights.",
+        "Designed a multi-feature business listing platform from the ground up, defining the information architecture, sitemap, user journeys, and interface through research-led UX decisions. Reworked existing flows and established a scalable design system to maintain consistency across the product.",
     },
     {
       date: "April 2023 - Jan 2024",
@@ -69,7 +69,7 @@ function WorkExperience() {
       link: "https://rightchoice.ai/",
       tags: ["AI", "B2B", "SAAS"],
       description:
-        "Created a seamless business listing website — UI screens, site maps, and thorough research from scratch. Rephrased existing flows and led the design team.",
+        "Designed a multi-feature business listing platform from the ground up, defining the information architecture, sitemap, user journeys, and interface through research-led UX decisions. Reworked existing flows and established a scalable design system to maintain consistency across the product.",
     },
     {
       date: "April 2023 - Jun 2023",
@@ -78,7 +78,7 @@ function WorkExperience() {
       link: "https://www.kosmc.ai/",
       tags: ["AI", "CREATORS", "B2B", "$100K RAISED"],
       description:
-        "User flows and personas for different groups with minimal UI. Built a web app for creators to link all social handles. Collaborated with marketing and industry specialists.",
+        "Defined user flows and personas for a diverse user base while keeping the experience simple and accessible. Designed a web application that brought multiple social profiles into a unified experience, working closely with marketing and industry specialists to align the product with user and business needs.",
     },
   ];
 
@@ -93,7 +93,7 @@ function WorkExperience() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="work-label">EXPERIENCE</div>
-          <h2 className="work-heading">4+ years of work</h2>
+          <h2 className="work-heading">4+ years designing digital products</h2>
         </motion.div>
 
         <div className="job-list">
