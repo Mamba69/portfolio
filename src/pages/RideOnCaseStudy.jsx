@@ -2,9 +2,10 @@ import CaseStudyPage from "../components/CaseStudyPage";
 import rideonData from "../data/rideon";
 
 const prevProject = { title: "Shifty", link: "/work/shifty" };
-// nextProject is null until the Rapido case study page is built — pointing
-// it at /work/rapido before that route exists just navigates to a blank page.
-const nextProject = null; // will become { title: "Rapido", link: "/work/rapido" }
+// Rapido doesn't have an inside page yet, so this skips straight to Sehat
+// Sarthi rather than linking to a page that doesn't exist. Once Rapido's
+// page is built, insert it here and update Sehat Sarthi's prevProject too.
+const nextProject = { title: "Sehat Sarthi", link: "/work/sehat-sarthi" };
 
 export default function RideOnCaseStudy() {
   return (

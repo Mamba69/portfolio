@@ -1,7 +1,7 @@
 import CaseStudyPage from "../components/CaseStudyPage";
 import hclData from "../data/hcl";
 
-const prevProject = null; // will point to UDISE+ replacement once that page exists
+const prevProject = { title: "Student Analytics Dashboard", link: "/work/student-analytics" };
 const nextProject = { title: "Shifty", link: "/work/shifty" };
 
 export default function HclCaseStudy() {

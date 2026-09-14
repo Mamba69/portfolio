@@ -1,10 +1,7 @@
 import CaseStudyPage from "../components/CaseStudyPage";
 import studentAnalyticsData from "../data/studentAnalytics";
 
-// No figmaLink on this data object — this is a live deployed platform, not
-// a Figma prototype, so the "View on Figma" CTA in CaseStudyPage simply
-// won't render for this page.
-
+// First in the chain — no previous project.
 const prevProject = null;
 const nextProject = { title: "HCL", link: "/work/hcl" };
 
