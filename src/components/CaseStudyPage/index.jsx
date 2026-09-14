@@ -163,7 +163,7 @@ export default function CaseStudyPage({ data, prevProject, nextProject }) {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
           >
-            <div className="cs-content-text cs-full">
+            <div className={`cs-content-text ${process.image ? "" : "cs-full"}`}>
               <h2 className="cs-section-title">Design Process</h2>
               <p className="cs-section-paragraph">{process.paragraph}</p>
 
@@ -197,6 +197,11 @@ export default function CaseStudyPage({ data, prevProject, nextProject }) {
                 </div>
               </div>
             </div>
+            {process.image && (
+              <div className="cs-content-image">
+                <img src={process.image} alt="Design process artifact" loading="lazy" />
+              </div>
+            )}
           </motion.div>
 
           <Section

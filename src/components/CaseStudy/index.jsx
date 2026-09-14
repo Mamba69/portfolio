@@ -7,6 +7,7 @@ import hclImg from "../../assets/hcl-casestudy.webp";
 import shiftyImg from "../../assets/shifty.webp";
 import rideonImg from "../../assets/Rideon.webp";
 import rapidoImg from "../../assets/Rapido.webp";
+import sehatSarthiImg from "../../assets/sehat-sarthi-casestudy.webp";
 
 function LatestResearch() {
   const containerVariants = {
@@ -119,6 +120,18 @@ function LatestResearch() {
           image={rapidoImg}
           link="https://www.figma.com/design/fV3nwx9z55cEWhleym8kQZ/Rapido-Portfolio?node-id=517-7445&t=JweqEa5zWBscQHAf-0"
         />
+
+        <ProjectCard
+         number="06"
+         category="SEHAT SARTHI"
+         year="2024"
+         title="Sehat Sarthi"
+         description="A UX research-driven app improving access to Mobile Medical Units for remote hill communities in Tehri and Dhanaulti, Uttarakhand."
+         tags="#UX RESEARCH #HEALTHCARE #SOCIAL IMPACT"
+         legacy={false}
+         image={sehatSarthiImg}
+         link="/work/sehat-sarthi"
+/>
       </motion.div>
     </section>
   );
