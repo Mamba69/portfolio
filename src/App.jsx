@@ -21,6 +21,7 @@ import "./App.css";
 import ShiftyCaseStudy from "./pages/ShiftyCaseStudy";
 import RideOnCaseStudy from "./pages/RideOnCaseStudy";
 import HclCaseStudy from "./pages/HclCaseStudy";
+import StudentAnalyticsCaseStudy from "./pages/StudentAnalyticsCaseStudy";
 
 
 function App() {
@@ -110,6 +111,7 @@ function App() {
         <Route path="/work/shifty" element={<ShiftyCaseStudy />} />
         <Route path="/work/ride-on" element={<RideOnCaseStudy />} />
         <Route path="/work/hcl" element={<HclCaseStudy />} />
+        <Route path="/work/student-analytics" element={<StudentAnalyticsCaseStudy />} />
       </Routes>
     </>
   );
