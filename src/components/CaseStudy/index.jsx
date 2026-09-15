@@ -62,7 +62,7 @@ function LatestResearch() {
           </motion.div>
         </div>
 
-        <ProjectCard
+        {/* <ProjectCard
          number="01"
          category="STUDENT ANALYTICS"
          year="2026"
@@ -72,9 +72,9 @@ function LatestResearch() {
          legacy={false}
          image={udiseImg}
          link="/work/student-analytics"
-        />
+        /> */}
         <ProjectCard
-          number="02"
+          number="01"
           category="HCL"
           year="2025"
           title="HCL"
@@ -86,7 +86,7 @@ function LatestResearch() {
         />
 
         <ProjectCard
-          number="03"
+          number="02"
           category="SHIFTY"
           year="2024"
           title="Shifty"
@@ -98,7 +98,7 @@ function LatestResearch() {
         />
 
         <ProjectCard
-          number="04"
+          number="03"
           category="RIDE ON"
           year="2023"
           title="Ride On"
@@ -110,7 +110,7 @@ function LatestResearch() {
         />
 
         <ProjectCard
-          number="05"
+          number="04"
           category="RAPIDO"
           year="2023"
           title="Rapido"
@@ -122,7 +122,7 @@ function LatestResearch() {
         />
 
         <ProjectCard
-         number="06"
+         number="05"
          category="SEHAT SARTHI"
          year="2024"
          title="Sehat Sarthi"
